@@ -12,4 +12,9 @@
 8. Kafka
 9. Docker
    
+## Application Flow
 
+1. The user will open account in bank with minimum balance 
+2. The user will be able to do (Debit or Credit) transaction
+3. Kafka will send or publish the transaction details with current balance on Topic
+4. Registered (non-JVM application) will act as sidecar app and will consume the transaction details 
