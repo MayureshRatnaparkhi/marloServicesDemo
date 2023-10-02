@@ -1,0 +1,15 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: sidecar-service
+
+
+sidecar:
+  port: 3000
+  health-uri: http://localhost:3000/status
+
+# http://localhost:9004/hosts/sidecar-service
+#http://localhost:9004/hosts/sidecar/status
+#http://localhost:9004/sidecar/status

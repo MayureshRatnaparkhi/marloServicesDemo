@@ -1,0 +1,15 @@
+server:
+  port: 3000
+  
+spring:
+  application:
+    name: accountTransaction-Listener
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: account-transaction
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+

@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS account (id INT NOT NULL AUTO_INCREMENT, bankId INT NOT NULL, name VARCHAR(255),
+accountType VARCHAR(255), balanceAmount DOUBLE, PRIMARY KEY (id));
+
+CREATE TABLE IF NOT EXISTS accountTransaction (id INT NOT NULL AUTO_INCREMENT, accountId INT NOT NULL,
+trannsactionType VARCHAR(255), debitAmount DOUBLE, creditAmount DOUBLE,  transactionDate DATETIME DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (id));

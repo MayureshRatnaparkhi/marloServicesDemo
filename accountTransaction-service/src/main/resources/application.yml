@@ -1,0 +1,20 @@
+server:
+  port: 3333
+  
+spring:
+  application:
+    name: accountTransaction-service
+  r2dbc:
+    url: r2dbc:pool:mysql://localhost:3306/accountdb
+    username: root
+    password: mvr#2023
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: account-transaction
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+

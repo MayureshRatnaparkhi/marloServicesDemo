@@ -1,0 +1,32 @@
+server:
+  port: 2222
+  
+spring:
+  application:
+    name: account-service
+  r2dbc:
+    url: r2dbc:pool:mysql://localhost:3306/accountdb
+    username: root
+    password: mvr#2023
+  flyway:
+    url: jdbc:mysql://localhost:3306/accountdb
+    user:  ${spring.r2dbc.username}
+    password: ${spring.r2dbc.password}
+    baseline-on-migrate: true
+    locations:
+      - classpath:db/migration
+
+system:
+  banks:
+    -   bankCode: 1
+        bankName: HDFC
+        withdrawalLimitPerDay: 10000
+        initialDepositRequiredToOpenAccount: 100
+    -   bankCode: 2
+        bankName: AXIS
+        withdrawalLimitPerDay: 2000
+        initialDepositRequiredToOpenAccount: 200
+    -   bankCode: 3
+        bankName: IDBC
+        withdrawalLimitPerDay: 30000
+        initialDepositRequiredToOpenAccount: 200
